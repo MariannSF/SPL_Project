@@ -8,12 +8,22 @@ class User{
      var weight = 0.0
      var onDiet = false
 
+     // 1st method using weight
+     fun weightTimesConstant(): Double {
+          var weightTimesConstant = weight * 703.07
+          return weightTimesConstant
+     }
 
+     // 1st method using height
+     fun heightSquared(): Double {
+          var heightSquared = height * height
+          return heightSquared
+     }
 
      fun calculateBMI(): Double {
           var bmi = 1.0
           try {
-                bmi= (weight* 703.07) /  (height * height)
+                bmi= weightTimesConstant() / heightSquared()
 
           }catch (e: Exception){
                println("Divide by zero not allowed")
