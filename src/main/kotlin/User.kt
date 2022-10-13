@@ -35,11 +35,11 @@ class User{
      fun result(): Char {
 
           var ch: Char = if(calculateBMI() < 18.5) {
-               'U'
+               'U' //under weight
           } else if(calculateBMI()<25) {
-               'N'
+               'N' //normal weight
           } else {
-               'O'
+               'O' //over weight
           }
           return ch
      }
