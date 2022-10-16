@@ -1,4 +1,3 @@
-import java.lang.ArithmeticException
 import java.lang.Exception
 
 class User{
@@ -7,16 +6,17 @@ class User{
      var height = 0.0
      var weight = 0.0
      var onDiet = false
+     private val bmiConstant : Int = 703
 
      // 1st method using weight
      fun weightTimesConstant(): Double {
-          var weightTimesConstant = weight * 703.07
+          val weightTimesConstant = weight * bmiConstant
           return weightTimesConstant
      }
 
      // 1st method using height
      fun heightSquared(): Double {
-          var heightSquared = height * height
+          val heightSquared = height * height
           return heightSquared
      }
 
@@ -34,7 +34,7 @@ class User{
      }
      fun result(): Char {
 
-          var ch: Char = if(calculateBMI() < 18.5) {
+          val ch: Char = if(calculateBMI() < 18.5) {
                'U' //under weight
           } else if(calculateBMI()<25) {
                'N' //normal weight
