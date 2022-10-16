@@ -45,8 +45,16 @@ fun main() {
           if(b.equals("y", ignoreCase = true)){
               bB = true
           }
+            if(bB.equals(true)){
+                println("You selected ${b} which is converted to a boolean ${bB} , this built in method satisfies bool data type built in method")
+            }else{
+                println("You selected ${b} which is converted to a boolean ${bB} , this built in method satisfies bool data type built in method")
+            }
+
 
         }
+
+
 
        // println("variable ${bB}")
 
