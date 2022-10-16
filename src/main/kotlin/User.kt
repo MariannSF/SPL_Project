@@ -1,3 +1,4 @@
+import java.lang.ArithmeticException
 import java.lang.Exception
 
 class User{
@@ -7,6 +8,10 @@ class User{
      var weight = 0.0
      var onDiet = false
      private val bmiConstant : Int = 703
+
+     fun setOnDiet(): Boolean{
+          return onDiet
+     }
 
      // 1st method using weight
      fun weightTimesConstant(): Double {
@@ -25,7 +30,7 @@ class User{
           try {
                 bmi= weightTimesConstant() / heightSquared()
 
-          }catch (e: Exception){
+          }catch (e: ArithmeticException){
                println("Divide by zero not allowed")
           }
 

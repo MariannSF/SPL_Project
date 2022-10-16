@@ -1,5 +1,5 @@
 fun main() {
-    var arrayBMI = doubleArrayOf()
+    var arrayBMI = listOf<Double>()
     var arrayWeight = doubleArrayOf()
     var arrayHeight = doubleArrayOf()
     do {
@@ -33,20 +33,38 @@ fun main() {
             userInputH = readLine()?.toDoubleOrNull() ?: error("enter a number")
         }
 
+        println("Are you on a diet: y/n ")
+        val uInput = readLine()
+        val uChar = uInput?.subSequence(0,1)
+
+
+        var bB = false
+        if(uChar?.count()==1){
+           var b = uChar.get(0).toString()
+
+          if(b.equals("y", ignoreCase = true)){
+              bB = true
+          }
+
+        }
+
+       // println("variable ${bB}")
+
+
         val c1 = User()
 
 
         c1.name = userInputName.toString()
         c1.weight = userInputW
         c1.height = userInputH
-        c1.onDiet = true
+        c1.onDiet = bB
 
         val bmiArray = doubleArrayOf()
         println(c1.name)
         println(c1.weight)
         println(c1.onDiet)
         println(c1.calculateBMI())
-        println(c1.result())
+        println("Result: ${c1.result()}")
 
 
         arrayBMI += c1.calculateBMI()
