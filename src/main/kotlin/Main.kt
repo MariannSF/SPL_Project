@@ -33,34 +33,38 @@ fun main() {
             userInputH = readLine()?.toDoubleOrNull() ?: error("enter a number")
         }
 
-        println("Are you on a diet: y/n ")
+        println("Are you on a diet?: y/n ")
         val uInput = readLine()
         val uChar = uInput?.subSequence(0,1)
 
+        println("Do you feel healthy?: y/n")
+        val input = readLine()
+        val health = input?.subSequence(0,1)
+        val t = health?.get(0).toString()
 
-        var bB = false
-        if(uChar?.count()==1){
-           var b = uChar.get(0).toString()
-
-          if(b.equals("y", ignoreCase = true)){
-              bB = true
-          }
-            if(bB.equals(true)){
-                println("You selected ${b} which is converted to a boolean ${bB} , this built in method satisfies bool data type built in method")
-            }else{
-                println("You selected ${b} which is converted to a boolean ${bB} , this built in method satisfies bool data type built in method")
-            }
-
-
+        var h = false
+        if(t.equals("y", true)) {
+            h = true
         }
 
+        var bB = false
+        if(uChar?.count()==1) {
+            var b = uChar.get(0).toString()
 
+            if (b.equals("y", true)) {
+                bB = true
+            }
 
-       // println("variable ${bB}")
-
+            // Two built-in function used on data type, 'Boolean'
+            if (bB.equals(true).and(h)) {
+                println("You selected $b which is converted to a boolean $bB , this built in method satisfies bool data type built in method")
+            } else {
+                println("You selected $b which is converted to a boolean $bB , this built in method satisfies bool data type built in method")
+            }
+        }
+        // println("variable ${bB}")
 
         val c1 = User()
-
 
         c1.name = userInputName.toString()
         c1.weight = userInputW
@@ -93,7 +97,7 @@ fun main() {
         if (chr?.count() == 1) {
             it = chr.get(0).toString()
         }
-    // Two built-in functions used on data type 'Char'
+    // Two built-in functions used on data type 'String'
     } while (it.equals('y'.toString(), true))
 
     println("BMI Array: ")
